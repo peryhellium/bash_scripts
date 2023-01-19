@@ -1,7 +1,8 @@
-# Ask the user for the name of the file
-filename = raw_input("Enter the name of the file to process: ")
+#!/usr/local/bin/python3
 
-# Set counters to 0
+# Ask the user for the name of the file
+filename = input("Enter the name of the file to process: ")
+
 up_to_1 = 0
 between_1_5 = 0
 between_5_10 = 0
@@ -10,12 +11,9 @@ between_20_30 = 0
 over_30 = 0
 
 # Open the file
-with open(filename, "r") as f:
-  # Read each line in the file
+with open(filename, "r") as f:  
   for line in f:
-    # Split the line into columns
-    columns = line.split()
-    # Check if the line has at least 12 columns
+    columns = line.split()    
     if len(columns) >= 12:
       # Extract the time from the 12th column
       time = float(columns[11])
@@ -40,4 +38,3 @@ print("Between 5 seconds and 10 seconds: {}".format(between_5_10))
 print("Between 10 seconds and 20 seconds: {}".format(between_10_20))
 print("Between 20 seconds and 30 seconds: {}".format(between_20_30))
 print("Over 30 seconds: {}".format(over_30))
-
